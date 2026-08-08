@@ -1,23 +1,34 @@
-public static void main (String[] args)
-  int numofGuesses = 4;
-  int[] board = 0,1,2,3,4,5,6;
-  int board_max = 7;
-  int Hits = 0;
-  int Misses = 0;
-  // sevel virtual locations on the board
-  COMPUTE a random number between 0 and 4 that will be the starting location cell position
-  // so if it's position 4 it will be 4,5,6, etc
-  
-  WHILE loop for if the numofGuesses is > 0 
+SET numOfGuesses to 0
+SET numOfHits to 0
 
-    USER enters a guess between 0 to 6 
+COMPUTE a random starting location between 0 and 4
 
-    ARRAY board is checked for a match, if matched a hit 
-      ELSE miss 
-      ELSE kill if 3 a row are hit, then BREAK the loop
-      DECREMENT numofGuesses
-      EXIT the loop when four guesses are given or kill is achieved
+SET Startup locations to:
+    starting location
+    starting location + 1
+    starting location + 2
 
+WHILE Startup has not been killed
+
+    ASK user for a guess between 0 and 6
+
+    INCREMENT numOfGuesses
+
+    CHECK guess against Startup locations
+
+    IF guess matches an un-hit Startup location
+        DISPLAY "hit"
+        MARK that location as hit
+        INCREMENT numOfHits
+
+        IF numOfHits equals 3
+            DISPLAY "kill"
+            EXIT loop
+
+    ELSE
+        DISPLAY "miss"
+
+DISPLAY number of guesses
   
   
   
